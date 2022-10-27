@@ -1,31 +1,8 @@
 const sliderCityPanel = document.querySelector('.city-panel__slider');
 const sliderCityPanelArrowUp = sliderCityPanel.firstElementChild;
 const sliderCityPanelArrowDown = sliderCityPanel.lastElementChild;
-const user = {
-  name: 'JavaScript',
-  hello: () => this.name,
-  bye: () => this.hello()
-}
-const newPost = (post, addedAt = Date()) => {
-  return { ...post, addedAt }
-}
-const user1 = {
-  id: 1,
-  name: 'max'
-}
-console.log(newPost(user1));
 
-// let answer = 42;
-// answer += 20;
-// console.log(answer);
 
-// console.log(typeof user.hello.name, user.hello.name)
-// console.log(typeof user.hello, user.hello)
-// console.log(typeof user.hello(), user.hello())
-// console.log('end-------');
-
-// console.log(sliderCityPanel);
-// console.log(sliderCityPanelArrowDown);
 const cardsCityNamesOfCities = document.querySelectorAll(".card-city__city-name");
 const cardsCityNamesOfCountries = document.querySelectorAll(".card-city__country");
 
