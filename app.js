@@ -15,7 +15,6 @@ let sliderMovedPX = 0;
 const bigStep = 106;
 const smallStep = 80;
 
-
 const cityData = {
   Ankara: {
     images: ['https://media.istockphoto.com/photos/panoramic-ankara-view-with-the-sogutozu-district-picture-id1158503480?k=20&m=1158503480&s=612x612&w=0&h=v6VNuUdpimuAtrP82qzJ4gOVNHqYEXs3Mskz-PAjEFw=', 'https://www.iyipara.org/wp-content/uploads/2022/07/ankara-kalesi.jpg', 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/75000/75741-Ankara-And-Vicinity.jpg?impolicy=fcrop&w=360&h=224&q=mediumLow'],
@@ -46,20 +45,15 @@ function getTemplateBottomLeft(temp, parent) {
   const country = parent.querySelector(".card-city__country").textContent;
   const date = parent.querySelector(".card-city__date").textContent;
   const price = parent.querySelector(".card-city__price").textContent;
-  // const hotelText = tempCopy.querySelector('.city-page__hotel-text').textContent;
   tempCopy.querySelector('.city-page__name-city').textContent = cityName;
   tempCopy.querySelector('.city-page__name-country').textContent = country;
   tempCopy.querySelector('.city-page__date').textContent = date;
   tempCopy.querySelector('.city-page__price').textContent = price;
   tempCopy.querySelector('.city-page__description-city').textContent = cityData[cityName]['description'];
-  console.log(tempCopy);
-
-  // const imageInTemplate = tempCopy.querySelectorAll('.city-page__photo')
-  // imageInTemplate.forEach((img, i) => {
-  // img.src = images[cityName]['images'][i]
-  // })
+  // console.log(tempCopy);
   return tempCopy
 }
+
 function getTemplateBottomRight(temp, parent) {
   const tempCopy = temp.content.cloneNode(true)
   const cityName = parent.querySelector('.city-page__name-city').textContent;
@@ -78,8 +72,6 @@ function getTemplateTop(temp, parent) {
   imageInTemplate.forEach((img, i) => {
     img.src = cityData[cityName]['images'][i]
   })
-  // console.log(tempCopy.querySelector('.city-page__hotel-text').textContent);
-  // console.log(tempCopy);
   return tempCopy
 }
 
@@ -88,11 +80,13 @@ const cityPages = document.querySelectorAll('.city-page')
 const templateBottomRight = document.querySelector('#template-bottom-right');
 const templateBottomLeft = document.querySelector('#template-bottom-left');
 const templateTop = document.querySelector('#template-top');
-for (let i = 0; i < cityPages.length; i++) {
-  const cityPage = cityPages[i];
+
+cityPages.forEach((cityPage, i) => {
   const cardCityFromSlider = cardsCity[i];
+
   const tempBottomLeft = getTemplateBottomLeft(templateBottomLeft, cardCityFromSlider);
   cityPage.querySelector('.city-page__content-bottom').append(tempBottomLeft);
+
   const tempBottomRight = getTemplateBottomRight(templateBottomRight, cityPage)
   cityPage.querySelector('.city-page__content-bottom').append(tempBottomRight);
 
@@ -100,7 +94,7 @@ for (let i = 0; i < cityPages.length; i++) {
   cityPage.querySelector('.city-page__content-top').append(tempTop);
 
   cityPage.style.backgroundImage = `url(${cardCityFromSlider.querySelector(".card-city__photo").src})`;
-}
+})
 
 
 const cityPageWidth = cityPages[0].clientWidth;
