@@ -1,12 +1,11 @@
+const cityPanel = document.querySelector('.city-panel');
 const sliderCityPanel = document.querySelector('.city-panel__slider');
 const sliderCityPanelArrowUp = sliderCityPanel.firstElementChild;
 const sliderCityPanelArrowDown = sliderCityPanel.lastElementChild;
-
-
 const cardsCityNamesOfCities = document.querySelectorAll(".card-city__city-name");
 const cardsCityNamesOfCountries = document.querySelectorAll(".card-city__country");
-
 const cardsCity = document.querySelectorAll(".card-city");
+
 const cardsInSlider = cardsCity.length;
 let currentCard = Math.floor(cardsInSlider / 2);
 
@@ -101,8 +100,11 @@ const cityPageWidth = cityPages[0].clientWidth;
 let containerCityPagePosition = cityPageWidth * 2;
 containerCityPage.style.transform = `translateX(-${containerCityPagePosition}px)`;
 
+// const transitionendEvent = new Event('transitionend');
+// wrapperSlaider.dispatchEvent(transitionendEvent);
+
 function switchSliderUp() {
-  console.log(`Нажал на стрелку вниз  текущая карточка ${currentCard}`);
+  // console.log(`Нажал на стрелку вниз  текущая карточка ${currentCard}`);
   if (currentCard != cardsInSlider - 1 && currentCard != 0 && currentCard != 1 && currentCard != cardsInSlider - 2) {
     // console.log(`Самое общее условие(вход), текущая карточка = ${currentCard}`);
     containerCityPagePosition -= cityPageWidth
@@ -116,7 +118,7 @@ function switchSliderUp() {
     makeMediumBeSmall(cardsCity[currentCard + 1])
     hideSmall(cardsCity[currentCard + 2])
     currentCard--
-    console.log(`Самое общее условие(выход), текущая карточка = ${currentCard}`);
+    // console.log(`Самое общее условие(выход), текущая карточка = ${currentCard}`);
   } else if (currentCard == cardsInSlider - 1) {
     // console.log(`Вошел в условие с ПОСЛЕДНЕЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
     containerCityPagePosition -= cityPageWidth
@@ -128,7 +130,7 @@ function switchSliderUp() {
     makeSmallBeMedium(cardsCity[currentCard - 2])
     showSmall(cardsCity[currentCard - 3])
     currentCard--
-    console.log(`Вышел из  условия с ПОСЛЕДНЕЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
+    // console.log(`Вышел из  условия с ПОСЛЕДНЕЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
 
   } else if (currentCard == cardsInSlider - 2) {
     // console.log(`Вошел в условие с ПОСЛЕДНЕЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
@@ -142,7 +144,7 @@ function switchSliderUp() {
     makeSmallBeMedium(cardsCity[currentCard - 2])
     showSmall(cardsCity[currentCard - 3])
     currentCard--
-    console.log(`Вышел из  условия с ПОСЛЕДНЕЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
+    // console.log(`Вышел из  условия с ПОСЛЕДНЕЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
 
   } else if (currentCard == 1) {
     // console.log(`Вошел в условие с текущей карточкой = ${currentCard}`);
@@ -155,16 +157,16 @@ function switchSliderUp() {
     makeMediumBeSmall(cardsCity[currentCard + 1])
     hideSmall(cardsCity[currentCard + 2])
     currentCard--
-    console.log(`Вышел из условия, теперь текущая карточкая = ${currentCard}`);
+    // console.log(`Вышел из условия, теперь текущая карточкая = ${currentCard}`);
 
   } else {
-    console.log(`Вошел в условие с НУЛЕВОЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
+    // console.log(`Вошел в условие с НУЛЕВОЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
   }
 }
 
 function switchSliderDown() {
-  console.log(wrapperSlaider.clientWidth);
-  console.log(`Нажал на стрелку вверх  текущая карточка ${currentCard}`);
+  // console.log(wrapperSlaider.clientWidth);
+  // console.log(`Нажал на стрелку вверх  текущая карточка ${currentCard}`);
   if (currentCard != cardsInSlider - 1 && currentCard != 0 && currentCard != 1 && currentCard != cardsInSlider - 2) {
     // console.log(`ВВЕРХ: Самое общее условие(вход), текущая карточка = ${currentCard}`);
     containerCityPagePosition += cityPageWidth
@@ -177,7 +179,7 @@ function switchSliderDown() {
     makeMediumBeSmall(cardsCity[currentCard - 1])
     hideSmall(cardsCity[currentCard - 2])
     currentCard++
-    console.log(`ВВЕРХ: Самое общее условие(выход), текущая карточка = ${currentCard}`);
+    // console.log(`ВВЕРХ: Самое общее условие(выход), текущая карточка = ${currentCard}`);
   } else if (currentCard == 0) {
     // console.log(`ВВЕРХ: Вошел в условие с ПОСЛЕДНЕЙ НУЛЕВОЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
     containerCityPagePosition += cityPageWidth
@@ -189,7 +191,7 @@ function switchSliderDown() {
     makeSmallBeMedium(cardsCity[currentCard + 2])
     showSmall(cardsCity[currentCard + 3])
     currentCard++
-    console.log(`ВВЕРХ: Вышел из  условия с ПОСЛЕДНЕЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
+    // console.log(`ВВЕРХ: Вышел из  условия с ПОСЛЕДНЕЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
 
   } else if (currentCard == 1) {
     // console.log(`ВВЕРХ: Вошел в условие с ПРЕДПОСЛЕДНЕЙ 1 Карточкой, для проверки текущая карточка = ${currentCard}`);
@@ -203,7 +205,7 @@ function switchSliderDown() {
     makeSmallBeMedium(cardsCity[currentCard + 2])
     showSmall(cardsCity[currentCard + 3])
     currentCard++
-    console.log(`ВВЕРХ: Вышел из  условия с ПОСЛЕДНЕЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
+    // console.log(`ВВЕРХ: Вышел из  условия с ПОСЛЕДНЕЙ Карточкой, для проверки текущая карточка = ${currentCard}`);
 
   } else if (currentCard == cardsInSlider - 2) {
     // console.log(`ВВЕРХ: Вошел в условие с ПРЕДПОСЛЕДНЕЙ ${cardsInSlider - 2} Карточкой, для проверки текущая карточка = ${currentCard}`);
@@ -216,15 +218,32 @@ function switchSliderDown() {
     makeMediumBeSmall(cardsCity[currentCard - 1])
     hideSmall(cardsCity[currentCard - 2])
     currentCard++
-    console.log(`ВВЕРХ: Вышел из  условия. ПРЕДПОСЛЕДНЯЯ => ПОСЛЕДНЯЯ, для проверки текущая карточка = ${currentCard}`);
+    // console.log(`ВВЕРХ: Вышел из  условия. ПРЕДПОСЛЕДНЯЯ => ПОСЛЕДНЯЯ, для проверки текущая карточка = ${currentCard}`);
 
   } else {
-    console.log(`А все это последняя карточка`);
+    // console.log(`А все это последняя карточка`);
   }
 }
 
 sliderCityPanelArrowUp.addEventListener('click', switchSliderUp)
 sliderCityPanelArrowDown.addEventListener('click', switchSliderDown)
+
+function switchSliderUpByWheel(event) {
+  const delta = event.deltaY;
+  cityPanel.removeEventListener('wheel', switchSliderUpByWheel);
+  if (delta < 0) {
+    switchSliderUp();
+    setTimeout(() => {
+      cityPanel.addEventListener('wheel', switchSliderUpByWheel, { passive: true });
+    }, currentCard == 0 ? 0 : 300);
+  } else if (delta > 0) {
+    switchSliderDown();
+    setTimeout(() => {
+      cityPanel.addEventListener('wheel', switchSliderUpByWheel, { passive: true });
+    }, currentCard == 4 ? 0 : 300);
+  }
+};
+cityPanel.addEventListener('wheel', switchSliderUpByWheel, { passive: true });
 
 
 function makeLargeBeMedium(largeCard) {
