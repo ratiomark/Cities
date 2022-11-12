@@ -252,6 +252,8 @@ cityPanel.addEventListener('touchend', switchSliderByTouch);
 
 const timeValueForSlider = 300
 function switchSliderByTouch(event) {
+  // event.preventDefault();
+  cityPanel.removeEventListener('touchend', switchSliderByTouch);
   touchEndY = event.changedTouches[0].screenY;
   const delta = touchEndY - touchStartY
   console.log(delta);
@@ -262,13 +264,12 @@ function switchSliderByTouch(event) {
   // console.log(event.changedTouches[0]);
 
 
-  cityPanel.removeEventListener('touchend', switchSliderByTouch);
-  if (delta < 0) {
+  if (delta > 0) {
     // switchSliderUp();
     window.requestAnimationFrame(switchSliderUp);
     time = currentCard == 0 ? 80 : timeValueForSlider
     timer = setTimeout(() => {
-      cityPanel.addEventListener('touchend', switchSliderByTouch, { passive: true });
+      cityPanel.addEventListener('touchend', switchSliderByTouch);
       clearTimeout(timer)
     }, time);
   } else if (delta < 0) {
@@ -276,7 +277,7 @@ function switchSliderByTouch(event) {
     window.requestAnimationFrame(switchSliderDown);
     time = currentCard == lastIndexCardInSlider ? 80 : timeValueForSlider
     timer = setTimeout(() => {
-      cityPanel.addEventListener('touchend', switchSliderByTouch, { passive: true });
+      cityPanel.addEventListener('touchend', switchSliderByTouch);
       clearTimeout(timer)
     }, time);
   }
