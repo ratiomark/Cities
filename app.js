@@ -7,6 +7,7 @@ const cardsCityNamesOfCountries = document.querySelectorAll(".card-city__country
 const cardsCity = document.querySelectorAll(".card-city");
 
 const cardsInSlider = cardsCity.length;
+const lastIndexCardInSlider = cardsInSlider - 1
 let currentCard = Math.floor(cardsInSlider / 2);
 
 const wrapperSlaider = document.querySelector('.card-city__inner-wrapper-slaider')
@@ -225,25 +226,111 @@ function switchSliderDown() {
   }
 }
 
-sliderCityPanelArrowUp.addEventListener('click', switchSliderUp)
-sliderCityPanelArrowDown.addEventListener('click', switchSliderDown)
+// sliderCityPanelArrowUp.addEventListener('click', switchSliderUp)
+sliderCityPanelArrowUp.addEventListener('click', () => {
+  window.requestAnimationFrame(switchSliderUp);
+});
+sliderCityPanelArrowDown.addEventListener('click', () => {
+  window.requestAnimationFrame(switchSliderDown);
+});
 
-function switchSliderUpByWheel(event) {
-  const delta = event.deltaY;
-  cityPanel.removeEventListener('wheel', switchSliderUpByWheel);
+
+// cityPanel.addEventListener('touchend', (e) => {
+//   console.log(e.deltaY);
+
+//   window.requestAnimationFrame(switchSliderUp);
+// });
+
+let touchStartY;
+let touchEndY;
+cityPanel.addEventListener('touchstart', (e) => {
+  console.log(e.changedTouches[0]);
+  touchStartY = e.changedTouches[0].screenY
+});
+
+cityPanel.addEventListener('touchend', switchSliderByTouch);
+
+const timeValueForSlider = 300
+function switchSliderByTouch(event) {
+  touchEndY = event.changedTouches[0].screenY;
+  const delta = touchEndY - touchStartY
+  console.log(delta);
+
+  // const delta = event.changedTouches[0].screenY;
+  // let delta = 0;
+  // console.log(delta);
+  // console.log(event.changedTouches[0]);
+
+
+  cityPanel.removeEventListener('touchend', switchSliderByTouch);
   if (delta < 0) {
-    switchSliderUp();
-    setTimeout(() => {
-      cityPanel.addEventListener('wheel', switchSliderUpByWheel, { passive: true });
-    }, currentCard == 0 ? 0 : 300);
+    // switchSliderUp();
+    window.requestAnimationFrame(switchSliderUp);
+    time = currentCard == 0 ? 80 : timeValueForSlider
+    timer = setTimeout(() => {
+      cityPanel.addEventListener('touchend', switchSliderByTouch, { passive: true });
+      clearTimeout(timer)
+    }, time);
   } else if (delta > 0) {
-    switchSliderDown();
-    setTimeout(() => {
-      cityPanel.addEventListener('wheel', switchSliderUpByWheel, { passive: true });
-    }, currentCard == 4 ? 0 : 300);
+    // switchSliderDown();
+    window.requestAnimationFrame(switchSliderDown);
+    time = currentCard == lastIndexCardInSlider ? 80 : timeValueForSlider
+    timer = setTimeout(() => {
+      cityPanel.addEventListener('touchend', switchSliderByTouch, { passive: true });
+      clearTimeout(timer)
+    }, time);
   }
 };
-cityPanel.addEventListener('wheel', switchSliderUpByWheel, { passive: true });
+// cityPanel.addEventListener('touchend', (e) => {
+//   console.log(e.screenY);
+//   window.requestAnimationFrame(switchSliderDown);
+// });
+// sliderCityPanelArrowDown.addEventListener('click', switchSliderDown)
+
+// function switchSliderUpByWheel(event) {
+//   const delta = event.deltaY;
+//   if (delta < 0) {
+//     switchSliderUp();
+//   } else if (delta > 0) {
+//     switchSliderDown();
+//   }
+// };
+function switchSliderByWheel(event) {
+  const delta = event.deltaY;
+  cityPanel.removeEventListener('wheel', switchSliderByWheel);
+  if (delta < 0) {
+    // switchSliderUp();
+    window.requestAnimationFrame(switchSliderUp);
+    time = currentCard == 0 ? 80 : timeValueForSlider
+    timer = setTimeout(() => {
+      cityPanel.addEventListener('wheel', switchSliderByWheel, { passive: true });
+      clearTimeout(timer)
+    }, time);
+  } else if (delta > 0) {
+    // switchSliderDown();
+    window.requestAnimationFrame(switchSliderDown);
+    time = currentCard == lastIndexCardInSlider ? 80 : timeValueForSlider
+    timer = setTimeout(() => {
+      cityPanel.addEventListener('wheel', switchSliderByWheel, { passive: true });
+      clearTimeout(timer)
+    }, time);
+  }
+};
+
+// function throttle(callee, timeout) {
+//   let timer = null
+//   return function perform(...args) {
+//     if (timer) return
+//     timer = setTimeout(() => {
+//       callee(...args)
+//       clearTimeout(timer)
+//       timer = null
+//     }, timeout)
+//   }
+// }
+// const throttleSwitchSlider = throttle(switchSliderByWheel, 1000)
+// cityPanel.addEventListener('wheel', throttleSwitchSlider);
+cityPanel.addEventListener('wheel', switchSliderByWheel, { passive: true });
 
 
 function makeLargeBeMedium(largeCard) {

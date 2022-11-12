@@ -340,8 +340,8 @@
 .toSmallFromMediumCityName {
   -webkit-animation-name: toSmallFromMediumCityName;
           animation-name: toSmallFromMediumCityName;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -357,8 +357,8 @@
 .makeSmallIcon {
   -webkit-animation-name: makeSmallIcon;
           animation-name: makeSmallIcon;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -374,8 +374,8 @@
 .makeNormalIcon {
   -webkit-animation-name: makeNormalIcon;
           animation-name: makeNormalIcon;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -391,8 +391,8 @@
 .toSmallFromMediumCountryName {
   -webkit-animation-name: toSmallFromMediumCountryName;
           animation-name: toSmallFromMediumCountryName;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -408,8 +408,8 @@
 .toSmallFromMediumDate {
   -webkit-animation-name: toSmallFromMediumDate;
           animation-name: toSmallFromMediumDate;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -425,8 +425,8 @@
 .toSmallFromMediumPrice {
   -webkit-animation-name: toSmallFromMediumPrice;
           animation-name: toSmallFromMediumPrice;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -442,8 +442,8 @@
 .toMediumFromSmallCityName {
   -webkit-animation-name: toMediumFromSmallCityName;
           animation-name: toMediumFromSmallCityName;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -459,8 +459,8 @@
 .toMediumFromSmallCountryName {
   -webkit-animation-name: toMediumFromSmallCountryName;
           animation-name: toMediumFromSmallCountryName;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -476,8 +476,8 @@
 .toMediumFromSmallDate {
   -webkit-animation-name: toMediumFromSmallDate;
           animation-name: toMediumFromSmallDate;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -493,8 +493,8 @@
 .toMediumFromSmallPrice {
   -webkit-animation-name: toMediumFromSmallPrice;
           animation-name: toMediumFromSmallPrice;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -510,8 +510,8 @@
 .makeLargeBeMedium {
   -webkit-animation-name: makeLargeBeMedium;
           animation-name: makeLargeBeMedium;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -527,8 +527,8 @@
 .makeMediumBeLarge {
   -webkit-animation-name: makeMediumBeLarge;
           animation-name: makeMediumBeLarge;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -544,8 +544,8 @@
 .makeMediumBeSmall {
   -webkit-animation-name: makeMediumBeSmall;
           animation-name: makeMediumBeSmall;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -561,8 +561,8 @@
 .makeSmallBeMedium {
   -webkit-animation-name: makeSmallBeMedium;
           animation-name: makeSmallBeMedium;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -578,8 +578,8 @@
 .hideSmall {
   -webkit-animation-name: hideSmall;
           animation-name: hideSmall;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -595,8 +595,8 @@
 .showSmall {
   -webkit-animation-name: showSmall;
           animation-name: showSmall;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   -webkit-animation-delay: 0s;
@@ -656,9 +656,9 @@
   align-items: center;
   gap: 10px;
   height: 1500px;
-  transition: -webkit-transform 0.6s;
-  transition: transform 0.6s;
-  transition: transform 0.6s, -webkit-transform 0.6s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 .card-city_type_main {
   box-sizing: border-box;
@@ -891,7 +891,7 @@
   border-radius: 0 10px 10px 0;
   height: 700px;
   width: 100%;
-  transition: all 0.6s;
+  transition: all 0.5s;
 }
 
 .city-page {
