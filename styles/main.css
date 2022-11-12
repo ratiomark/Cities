@@ -634,10 +634,13 @@
   justify-content: center;
   transition: 0.4s ease;
 }
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 600px) {
   .page {
+    padding-top: 0;
+    padding-bottom: 0;
     padding-left: 15px;
     padding-right: 15px;
+    height: 650px;
   }
 }
 
@@ -812,7 +815,7 @@
   background-color: #9b51e0;
   position: relative;
 }
-@media screen and (max-width: 1550px) {
+@media screen and (max-width: 600px) {
   .city-panel {
     width: 330px;
     height: 600px;
@@ -877,6 +880,11 @@
   width: 100%;
   overflow: hidden;
   position: relative;
+}
+@media screen and (max-width: 600px) {
+  .main {
+    display: none;
+  }
 }
 .main__slider-container {
   -webkit-transform: translate(-50%, -50%) rotate(0deg);

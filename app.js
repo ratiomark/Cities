@@ -241,31 +241,22 @@ sliderCityPanelArrowDown.addEventListener('click', () => {
 //   window.requestAnimationFrame(switchSliderUp);
 // });
 
+const timeValueForSlider = 300
 let touchStartY;
 let touchEndY;
+
 cityPanel.addEventListener('touchstart', (e) => {
-  console.log(e.changedTouches[0]);
   touchStartY = e.changedTouches[0].screenY
 });
 
 cityPanel.addEventListener('touchend', switchSliderByTouch);
 
-const timeValueForSlider = 300
 function switchSliderByTouch(event) {
-  // event.preventDefault();
   cityPanel.removeEventListener('touchend', switchSliderByTouch);
   touchEndY = event.changedTouches[0].screenY;
   const delta = touchEndY - touchStartY
   console.log(delta);
-
-  // const delta = event.changedTouches[0].screenY;
-  // let delta = 0;
-  // console.log(delta);
-  // console.log(event.changedTouches[0]);
-
-
   if (delta > 0) {
-    // switchSliderUp();
     window.requestAnimationFrame(switchSliderUp);
     time = currentCard == 0 ? 80 : timeValueForSlider
     timer = setTimeout(() => {
@@ -273,34 +264,21 @@ function switchSliderByTouch(event) {
       clearTimeout(timer)
     }, time);
   } else if (delta < 0) {
-    // switchSliderDown();
     window.requestAnimationFrame(switchSliderDown);
     time = currentCard == lastIndexCardInSlider ? 80 : timeValueForSlider
     timer = setTimeout(() => {
       cityPanel.addEventListener('touchend', switchSliderByTouch);
       clearTimeout(timer)
     }, time);
+  } else {
+    cityPanel.addEventListener('touchend', switchSliderByTouch);
   }
 };
-// cityPanel.addEventListener('touchend', (e) => {
-//   console.log(e.screenY);
-//   window.requestAnimationFrame(switchSliderDown);
-// });
-// sliderCityPanelArrowDown.addEventListener('click', switchSliderDown)
 
-// function switchSliderUpByWheel(event) {
-//   const delta = event.deltaY;
-//   if (delta < 0) {
-//     switchSliderUp();
-//   } else if (delta > 0) {
-//     switchSliderDown();
-//   }
-// };
 function switchSliderByWheel(event) {
   const delta = event.deltaY;
   cityPanel.removeEventListener('wheel', switchSliderByWheel);
   if (delta < 0) {
-    // switchSliderUp();
     window.requestAnimationFrame(switchSliderUp);
     time = currentCard == 0 ? 80 : timeValueForSlider
     timer = setTimeout(() => {
@@ -308,7 +286,6 @@ function switchSliderByWheel(event) {
       clearTimeout(timer)
     }, time);
   } else if (delta > 0) {
-    // switchSliderDown();
     window.requestAnimationFrame(switchSliderDown);
     time = currentCard == lastIndexCardInSlider ? 80 : timeValueForSlider
     timer = setTimeout(() => {
