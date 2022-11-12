@@ -271,7 +271,7 @@ function switchSliderByTouch(event) {
       cityPanel.addEventListener('touchend', switchSliderByTouch, { passive: true });
       clearTimeout(timer)
     }, time);
-  } else if (delta > 0) {
+  } else if (delta < 0) {
     // switchSliderDown();
     window.requestAnimationFrame(switchSliderDown);
     time = currentCard == lastIndexCardInSlider ? 80 : timeValueForSlider

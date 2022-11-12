@@ -815,6 +815,7 @@
 @media screen and (max-width: 1550px) {
   .city-panel {
     width: 330px;
+    height: 500px;
   }
 }
 .city-panel__slider-container {
